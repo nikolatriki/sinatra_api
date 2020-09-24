@@ -67,9 +67,7 @@ namespace '/api/v1' do
 
   get '/books/:id' do |id|
     book = Book.where(id: id).first
-    halt(404, { message: 'Book iz not found!'}.to_json)
-    unless book
-      BookSerializer.new(book).to_json
-    end
+    halt(404, { message: 'Book iz not found!'}.to_json) unless book
+    BookSerializer.new(book).to_json
   end
 end
