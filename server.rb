@@ -3,7 +3,7 @@ require 'sinatra/namespace'
 require 'mongoid'
 
 # Database start
-Mongoid.load! "mongoid.config"
+Mongoid.load! 'mongoid.config'
 
 # Models
 class Book
